@@ -1,0 +1,119 @@
+.experience-container {
+    max-width: 800px;
+}
+
+.experience-tabs-container {
+    display: flex;
+    margin-top: 50px;
+}
+
+.tabs-list {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-family: var(--font-main);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+}
+
+.tab-btn:hover {
+    background: rgba(30, 30, 30, 0.5);
+    color: var(--accent-color);
+}
+
+.tab-btn.active {
+    color: var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-content {
+    padding-left: 30px;
+    flex: 1;
+}
+
+.job-title h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.company-name {
+    color: var(--accent-color);
+}
+
+.job-period {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 20px;
+}
+
+.job-description {
+    list-style: none;
+    padding: 0;
+}
+
+.job-description li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.job-description li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .experience-tabs-container {
+        flex-direction: column;
+    }
+
+    .tabs-list {
+        flex-direction: row;
+        border-left: none;
+        border-bottom: 2px solid var(--bg-secondary);
+        margin-bottom: 30px;
+        overflow-x: auto;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Ensure border color consistency */
+        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
+
+    .tabs-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .tab-btn {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        margin-left: 0;
+        margin-bottom: -2px;
+        white-space: nowrap;
+    }
+
+    .tab-btn.active {
+        border-left: none;
+        border-bottom: 2px solid var(--accent-color);
+    }
+}

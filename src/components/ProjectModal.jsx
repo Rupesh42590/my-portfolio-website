@@ -1,0 +1,77 @@
+import React, { useEffect } from 'react';
+import '../styles/ProjectModal.css';
+
+const ProjectModal = ({ isOpen, onClose, project }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-active');
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.classList.remove('modal-active');
+    };
+  }, [isOpen]);
+
+  if (!isOpen || !project) return null;
+
+  const handleBackdropClick = (e) => {
+    if (e.target.className === 'modal-backdrop') {
+      onClose();
+    }
+  };
+
+  return (
+    <div className="modal-backdrop" onClick={handleBackdropClick}>
+      <div className="modal-container">
+        <button className="modal-close-btn" onClick={onClose}>&times;</button>
+        
+        <div className="modal-image-container">
+          {project.image ? (
+            <img src={project.image} alt={project.title} className="modal-image" />
+          ) : (
+            <div className="modal-image-placeholder"></div>
+          )}
+          <div className="modal-overlay-gradient"></div>
+        </div>
+
+        <div className="modal-content">
+          <div className="modal-header-row">
+            <h2 className="modal-title">{project.title}</h2>
+            
+            <div className="modal-tech-stack">
+              {project.tech.map((t, i) => (
+                <span key={i} className="modal-tech-tag">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <p className="modal-description">{project.description}</p>
+          
+          {/* Detailed description simulated for now if not present in project object */}
+          <p className="modal-long-description">
+             {project.longDescription || project.description}
+          </p>
+
+          <div className="modal-actions">
+             {project.github && (
+               <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary modal-btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                 GitHub
+               </a>
+             )}
+             {/* Adding a placeholder Live Demo button since requested by user, checks if link exists */}
+             {project.liveLink && (
+               <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary modal-btn">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                 Live Demo
+               </a>
+             )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectModal;

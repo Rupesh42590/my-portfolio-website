@@ -1,0 +1,43 @@
+.footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--bg-primary);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links-footer {
+    display: none; /* Hidden on desktop as it repeats sidebar usually, but for this design we'll show on mobile mostly */
+    gap: 20px;
+}
+
+.social-links-footer a {
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.social-links-footer a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-credit {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: default;
+    transition: var(--transition-fast);
+}
+
+.footer-credit:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    /* Social links hidden on mobile as they are in navbar now */
+}
