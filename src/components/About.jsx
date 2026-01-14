@@ -1,45 +1,41 @@
 import React from 'react';
 import '../styles/About.css';
-import profilePic from '../assets/profile-pic.jpg';
+import profilePic from '../assets/profile-pic.JPG'; // Assuming this exists from previous structure
 
 const About = () => {
-  const skills = [
-    "React", "JavaScript", "HTML5", "CSS3", "Node.js", 
-    "Python", "Java", "Git", "Figma", "UI/UX"
-  ];
-
   return (
     <section className="section about-section" id="about">
-      <div className="container">
+      <div className="container about-container">
         <h2 className="section-title">About Me</h2>
         
         <div className="about-content">
           <div className="about-text">
             <p>
-              Hello! I'm <span className="highlight">Rupesh Malisetty</span>, a passionate 
-              Computer Science student at VIT-AP University. I enjoy creating 
-              beautiful and functional digital experiences.
+              Hi, I'm <span className="highlight">Rupesh</span>! I am a Computer Science student at <span className="highlight">VIT-AP University</span>. 
+              I love building apps that make life easier and more organized. Whether I'm working on a mobile app for my campus or a web tool for a business, 
+              I enjoy turning complex ideas into clean, user-friendly software.
             </p>
+
             <p>
-              With a strong foundation in core CS subjects and a keen eye for design, 
-              I strive to build applications that are not only efficient but also 
-              visually engaging. I'm constantly learning new technologies to improve 
-              my craft.
+              Beyond just writing code, I have a deep passion for <span className="highlight">Cloud Computing</span> and <span className="highlight">AI</span>. 
+               The best apps, in my opinion, are not only well-designed but also intelligent, secure, and scalable. This curiosity led me to earn my 
+              <span className="highlight"> AWS certifications</span>, helping me bridge the gap between building great features and deploying them on world-class infrastructure.
             </p>
             
-            <div className="skills-marquee-wrapper">
-              <div className="skills-track">
-                {skills.concat(skills).map((skill, index) => (
-                  <span key={index} className="skill-item">{skill}</span>
-                ))}
-              </div>
+            <div className="about-achievement">
+              <h3>What I've Been Up To</h3>
+              <p>
+                <span className="highlight-title">Global Coding:</span> I recently ranked <span className="highlight">10th in the world</span> during a major coding competition 
+                called <span className="highlight">TCS CodeVita</span>, which earned me a spot in the Grand Finale.
+              </p>
             </div>
           </div>
 
           <div className="about-img-wrapper">
-            <div className="img-container">
-              <img src={profilePic} alt="Profile" className="about-img" />
-            </div>
+             <div className="img-container">
+                {/* Fallback if image doesn't exist, we'll handle that via error boundary or check */}
+                <img src={profilePic} alt="Rupesh Malisetty" className="about-img" />
+             </div>
           </div>
         </div>
       </div>
