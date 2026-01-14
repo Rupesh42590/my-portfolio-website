@@ -61,6 +61,11 @@
     z-index: 2;
     transform: translateY(-10px);
     transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align to top if wrapping occurs, or center */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
 }
 
 .bento-card:hover .card-overlay-top {
@@ -70,7 +75,7 @@
 .card-project-title {
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 0 0 10px 0;
+    margin: 0; /* Remove margin as layout handles gap */
     color: var(--text-primary);
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
@@ -79,6 +84,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: flex-end; /* Align tags to the right */
+    max-width: 50%; /* Prevent overflow */
 }
 
 .card-tag {

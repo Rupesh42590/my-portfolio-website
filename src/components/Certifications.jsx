@@ -20,7 +20,7 @@ const Certifications = () => {
     {
       title: "Cybersecurity Foundation",
       issuer: "Palo Alto Networks",
-      image: "https://ui-avatars.com/api/?name=Cyber+Security&background=0D8ABC&color=fff&size=256", 
+      image: "https://upload.wikimedia.org/wikipedia/commons/d/de/PaloAltoNetworks_2020_Logo.svg", 
       link: "https://drive.google.com/file/d/1Bw0TJQh1suoZVc7Z_0jLb_r-XtgrwGJV/view"
     }
   ];

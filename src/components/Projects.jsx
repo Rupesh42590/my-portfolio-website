@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import '../styles/Projects.css';
-import vCommImg from '../assets/projects/v_comm.png';
+import vCommChatImg from '../assets/projects/v_comm_chat.png';
 import amazonImg from '../assets/projects/amazon_clone.png';
 
 const Projects = () => {
@@ -14,7 +14,7 @@ const Projects = () => {
       tags: ["Flutter", "Firebase", "Dart"],
       liveLink: "https://drive.google.com/file/d/1vxQsO1nPQpM0nFEaZ-KUxMrgMAXaqTj7/view",
       githubLink: "https://github.com/Rupesh42590/v_comm",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1000&auto=format&fit=crop",
+      image: vCommChatImg,
       size: "medium"
     },
     {
