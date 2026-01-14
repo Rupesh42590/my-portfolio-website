@@ -87,7 +87,8 @@
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(50px, 18vw, 100px);
+    font-size: clamp(32px, 10vw, 80px);
+    line-height: 1.1; /* slightly increase line height to prevent overlap at smaller sizes */
   }
   
   .line-1, .line-2 {
