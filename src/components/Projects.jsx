@@ -39,7 +39,7 @@ const Projects = () => {
   return (
     <section className="section projects-section" id="projects">
       <div className="container projects-container">
-        <h2 className="section-title">Selected Works</h2>
+        <h2 className="section-title">Projects</h2>
         <div className="bento-grid">
           {projects.map((project, index) => (
             <div 

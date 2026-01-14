@@ -98,6 +98,19 @@
     color: var(--text-secondary);
 }
 
+@media (max-width: 640px) {
+    .card-overlay-top {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    
+    .card-project-tags {
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+}
+
 /* MODAL STYLES */
 .project-modal-backdrop {
     position: fixed;
@@ -190,25 +203,58 @@
 .modal-header {
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
 }
 
 .modal-title {
     font-size: 2.5rem;
     font-weight: 800;
-    margin: 0 0 15px 0;
+    margin: 0;
     color: var(--text-primary);
 }
 
 .modal-tags {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-end;
-    max-width: 50%;
+    
+    /* Enable horizontal scroll */
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    
+    /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Hide scrollbar but keep functionality */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 5px;
+}
+
+.modal-tags::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .modal-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .modal-title {
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .modal-tags {
+        justify-content: flex-end;
+        max-width: 60%;
+        min-width: 0;
+    }
 }
 
 .modal-tag {
@@ -270,6 +316,9 @@
 @media (max-width: 768px) {
     .modal-body {
         padding: 25px;
+    }
+    .modal-image-container {
+        height: 200px;
     }
     .modal-title {
         font-size: 2rem;
