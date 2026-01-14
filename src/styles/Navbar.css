@@ -1,6 +1,6 @@
 .navbar-minimal {
      position: fixed;
-     top: 20px;
+     top: max(20px, env(safe-area-inset-top));
 
      left: 0;
      width: 100%;
@@ -79,7 +79,7 @@ body.modal-active .navbar-minimal {
 
 @media (max-width: 768px) {
     .navbar-minimal {
-        top: 20px;
+        top: max(20px, env(safe-area-inset-top));
         padding: 0 20px;
         height: 60px;
     }
