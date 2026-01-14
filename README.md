@@ -1,12 +1,46 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with **React** and **Vite**, featuring immersive animations, glassmorphic UI, and a clean aesthetic to showcase my work as a Full Stack Developer.
 
-Currently, two official plugins are available:
+##  Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Hero Section**: Dynamic text effects and a custom cursor for an engaging first impression.
+- **About Me**: Professional bio highlighting my journey, including my **TCS CodeVita** achievement (Ranked 10th Globally) and passion for **Cloud Computing & AI**.
+- **Projects Showcase**: Detailed project cards with a modal view for in-depth information, tech stacks, and links.
+- **Skills Marquee**: An infinite scrolling loop displaying my technical expertise across languages, frameworks, and tools.
+- **Experience & Education**: Structured timelines with a premium glassmorphic design.
+- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
 
-## Expanding the ESLint configuration
+##  Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19, Vite
+- **Styling**: Vanilla CSS (CSS Variables, Flexbox/Grid, Animations)
+- **Linting**: ESLint
+- **Deployment**: Ready for Netlify/Vercel
+
+##  Setup & Installation
+
+Follow these steps to run the project locally:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Rupesh42590/my-portfolio-website.git
+    cd my-portfolio-website
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+
